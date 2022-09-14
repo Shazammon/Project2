@@ -1,0 +1,163 @@
+<mxfile host="65bd71144e">
+    <diagram id="NwuoK44CtrfIQSXibiIm" name="Page-1">
+        <mxGraphModel dx="1208" dy="604" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="40" width="510" height="510" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&amp;nbsp; National Park Lovers (Home page)" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="40" width="480" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Profile | All Parks | Logout" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="344" y="40" width="206" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="US National Parks" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="100" width="490" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="150" width="240" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="national park name" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="150" width="240" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Photo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="180" width="110" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Photo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="180" width="110" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="Key information" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="180" width="130" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="610" width="240" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="national park name" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="610" width="240" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="Photo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="640" width="110" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="Photo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="640" width="110" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="Key information" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="640" width="130" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="User Experiences&lt;br&gt;User Experience&lt;br&gt;User Experiences" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="730" width="240" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="Favorite" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="280" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="Add Experience" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="178" y="280" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="330" width="240" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="national park name" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="330" width="240" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="Photo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="360" width="110" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="Photo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="360" width="110" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="Key information" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="360" width="130" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="330" width="240" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="national park name" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="330" width="240" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="Photo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="360" width="110" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="Photo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="360" width="110" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="Key information" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="410" y="360" width="130" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="150" width="240" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="national park name" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="150" width="240" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="Photo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="180" width="110" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="Photo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="180" width="110" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="Key information" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="410" y="180" width="130" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="View" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="280" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="View" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="280" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="Favorite" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="370" y="280" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="Add Experience" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="428" y="280" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="View" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="460" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="Favorite" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="370" y="460" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="Add Experience" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="428" y="460" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="View" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="69" y="460" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="Favorite" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="129" y="460" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="Add Experience" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="187" y="460" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="570" width="510" height="520" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="&amp;nbsp; National Park Lovers (park page)" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="570" width="480" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="Profile | All Parks | Logout" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="344" y="570" width="206" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="National Park Name" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="630" width="490" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="Photo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="680" width="250" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" value="Key information" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="330" y="680" width="200" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" value="User experience" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="940" width="470" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" value="User experience" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="990" width="470" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" value="User experience" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="1040" width="470" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

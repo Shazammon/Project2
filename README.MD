@@ -14,11 +14,19 @@ I will use the US National Park Services API - https://www.nps.gov/subjects/deve
 - As a user, I want to document my experiences at a national park. 
 - As a user, I want to read other users' experiences
 
-RESTful routes
+## ERD
+![](ERD.png)
 
-### User
+## Wire Frames
+### Home page - List of all National Parks
+![](home_page_wireframe.png)
 
-Users
+### Park page - individual park
+![](park_page_wireframe.png)
+
+## RESTful routes
+
+### Users
 | HTTP METHOD (_Verb_) | URL (_Nouns_)            | CRUD | Response                                       | Notes |
 | -------------------- | -------------            | ---- | --------                                       | ----- |
 | GET                  | /users                   | R    | a form for creating a new user                 |       |
@@ -26,7 +34,7 @@ Users
 | GET                  | /users/:id               | R    | show user's profile                            |       |
 | PUT                  | /users/:id               | U    | edit the user's profile                        |       |
 
-National Parks
+### National Parks
 | HTTP METHOD (_Verb_) | URL (_Nouns_)            | CRUD | Response                                          | Notes |
 | -------------------- | -------------            | ---- | --------                                          | ----- |
 | GET                  | /parks                   | R    | show all national parks                           |       |
@@ -34,7 +42,7 @@ National Parks
 | POST                 | /parks/:favorite:/id     | C    | add to favorites list                             |       |
 | DELETE               | /parks/:favorite:/id     | D    | remove from favorites list                        |       |
 
-Experiences
+### Experiences
 | HTTP METHOD (_Verb_) | URL (_Nouns_)            | CRUD | Response                                              | Notes |
 | -------------------- | -------------            | ---- | --------                                              | ----- |
 | GET                  | /experiences             | R    | show form to write an experience about national park  |       |
@@ -44,6 +52,9 @@ Experiences
 | DELETE               | /experiences/:id         | D    | delete an experience                                  |       |
 
 ## MVP
+- Set up sequelize ORM models and tables
+- Set up national park API
+- Set up express package with all RESTful routes
 - 
 
 ## Stretch Goals
