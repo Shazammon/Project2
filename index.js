@@ -11,7 +11,7 @@ console.log('server secret:', process.env.ENC_SECRET)
 
 // config express app/middlewares
 const app = express() // this gives us an instance of an express route
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3013
 app.set('view engine', 'ejs')
 app.use(ejsLayouts) // this is the middleware that creates the "body" on the layout.ejs file
 app.use(express.urlencoded({ extended: false }))
@@ -48,6 +48,7 @@ app.get('/', (req, res) => {
 
 // controllers
 app.use('/users', require('./controllers/users'))
+app.use('/parks', require('./controllers/parks'))
 
 // listen on a port
 app.listen(PORT, () => console.log(`listening on port ${PORT}`))

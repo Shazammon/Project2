@@ -29,8 +29,8 @@ I will use the US National Park Services API - https://www.nps.gov/subjects/deve
 ### Users
 | HTTP METHOD (_Verb_) | URL (_Nouns_)            | CRUD | Response                                       | Notes |
 | -------------------- | -------------            | ---- | --------                                       | ----- |
-| GET                  | /users                   | R    | a form for creating a new user                 |       |
-| POST                 | /users                   | C    | create new user                                |       |
+| GET                  | /users/new               | R    | a form for creating a new user                 |       |
+| POST                 | /users/new               | C    | create new user                                |       |
 | GET                  | /users/:id               | R    | show user's profile                            |       |
 | PUT                  | /users/:id               | U    | edit the user's profile                        |       |
 
@@ -55,7 +55,8 @@ I will use the US National Park Services API - https://www.nps.gov/subjects/deve
 - Set up sequelize ORM models and tables
 - Set up national park API
 - Set up express package with all RESTful routes
-- 
+- Clean HTML, CSS, and back-end code
+- Deploy online
 
 ## Stretch Goals
-- Add activities
+- Add activities to do in each park

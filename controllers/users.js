@@ -97,13 +97,14 @@ router.get('/logout', (req, res) => {
     res.redirect('/')
 })
 
-router.get('/profile', (req, res) => {
+router.get('/:profile', (req, res) => {
     // if the user is not logged in...we need to reidrect to the login form
     if (!res.locals.user) {
         res.redirect('/users/login?message=You must authenticate before you are authroized to view this resource')
         // otherwise show them their profile
     } else {
-        res.render('users/profile.ejs', {
+        console.log(res.locals.user)
+        res.render('users/profile', {
             user: res.locals.user
         })
     }
