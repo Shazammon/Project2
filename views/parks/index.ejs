@@ -1,0 +1,30 @@
+<h1>All US National Parks</h1>
+
+<div>
+    <% parks.forEach(park => { %>
+            <% if(park.designation === 'National Park') { %>
+                <div>
+                    <h2>
+                        <%= park.fullName %>
+                    </h2>
+                    <img src="<%= park.images[0].url %>" width="400px" >
+                    <h4>
+                        Park Description
+                    </h4>
+                    <p>
+                        <%= park.description %>
+                    </p>
+                    <form method="GET" action="">
+                        <input type="submit" value="View">
+                    </form>
+                    <form method="POST" action="/parks/favorite">
+                        <input id="favorite" name="parkCode" value="<%= park.parkCode %>" hidden>
+                        <input type="submit" value="Favorite">
+                    </form>
+                    <form method="GET" action="">
+                        <input type="submit" value="Add Experience">
+                    </form>
+                </div>
+            <% } %>
+<% }) %>
+</div> 

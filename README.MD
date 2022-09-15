@@ -30,17 +30,20 @@ I will use the US National Park Services API - https://www.nps.gov/subjects/deve
 | HTTP METHOD (_Verb_) | URL (_Nouns_)            | CRUD | Response                                       | Notes |
 | -------------------- | -------------            | ---- | --------                                       | ----- |
 | GET                  | /users/new               | R    | a form for creating a new user                 |       |
-| POST                 | /users/new               | C    | create new user                                |       |
-| GET                  | /users/:id               | R    | show user's profile                            |       |
-| PUT                  | /users/:id               | U    | edit the user's profile                        |       |
+| POST                 | /users               | C    | create new user                                |       |
+| GET                  | /users/:profile               | R    | show user's profile                            |       |
+| PUT                  | /users/:profile               | U    | edit the user's profile                        |       |
+| GET                  | /users/login               | R    | show a login form                         |       |
+| POST                  | /users/login               | C    | show a login form                         |       |
+| GET                  | /users/logout               | R    | show a login form                         |       |
 
 ### National Parks
 | HTTP METHOD (_Verb_) | URL (_Nouns_)            | CRUD | Response                                          | Notes |
 | -------------------- | -------------            | ---- | --------                                          | ----- |
 | GET                  | /parks                   | R    | show all national parks                           |       |
-| GET                  | /parks/:id               | R    | show a specific national park and all experiences |       |
-| POST                 | /parks/:favorite:/id     | C    | add to favorites list                             |       |
-| DELETE               | /parks/:favorite:/id     | D    | remove from favorites list                        |       |
+| GET                  | /parks/:parkCode               | R    | show a specific national park and all experiences |       |
+| POST                 | /parks/favorite/:parkCode/:id     | C    | add to favorites list                             |       |
+| DELETE               | /parks/favorite/:parkCode/:id     | D    | remove from favorites list                        |       |
 
 ### Experiences
 | HTTP METHOD (_Verb_) | URL (_Nouns_)            | CRUD | Response                                              | Notes |
@@ -59,4 +62,5 @@ I will use the US National Park Services API - https://www.nps.gov/subjects/deve
 - Deploy online
 
 ## Stretch Goals
+- Add a like counter on each park
 - Add activities to do in each park

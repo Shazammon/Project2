@@ -5,6 +5,15 @@ const db = require('../models')
 const crypto = require('crypto-js')
 const bcrypt = require('bcrypt')
 
+// async function getFavorites() {
+//     try {
+//         const
+
+//     } catch(err) {
+//         console.log(err)
+//     }
+// }
+
 // GET /users/new -- render a form to create a new users
 router.get('/new', (req, res) => {
     res.render('users/new.ejs')
@@ -21,7 +30,8 @@ router.post('/', async (req, res) => {
                 email: req.body.email
             },
             defaults: {
-                password: hashedPassword
+                password: hashedPassword,
+                name: req.body.name
             }
         })
 
@@ -97,16 +107,30 @@ router.get('/logout', (req, res) => {
     res.redirect('/')
 })
 
-router.get('/:profile', (req, res) => {
+router.get('/:profile', async (req, res) => {
     // if the user is not logged in...we need to reidrect to the login form
     if (!res.locals.user) {
         res.redirect('/users/login?message=You must authenticate before you are authroized to view this resource')
         // otherwise show them their profile
     } else {
-        console.log(res.locals.user)
-        res.render('users/profile', {
-            user: res.locals.user
-        })
+        try {
+            const userFavs = await db.favorite.findAll({
+                where: {
+                    userId: res.locals.user.id
+                }
+            })
+            
+            console.log(res.locals.user)
+            console.log(userFavs)
+            res.render('users/profile', {
+                user: res.locals.user,
+                favorites: userFavs
+                
+            })
+        } catch(err) {
+            console.log(err)
+            res.send('Yo, there is an error')
+        }
     }
 })
 
