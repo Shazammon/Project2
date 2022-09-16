@@ -1,12 +1,17 @@
 <h2>Welcome to your profile, <%= user.name %>!</h2>
+<div>
+    <a href="/users/edit">Edit my profile</a>
+</div>
+
+<h2>Bio:</h2>
+<p2><%= user.bio %></p2>
 
 <h3>My Favorite Parks:</h3>
 
-<% favorites.dataValues.parkCode.forEach(code => { %>
+<% parks.forEach(park => { %>
     <div>
         <h2>
-            <% favorites.parkCode %>
-            <%= parks.fullName %>
+            <% park.parkCode %>
         </h2>
     </div>
 <% }) %>

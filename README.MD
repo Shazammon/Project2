@@ -32,6 +32,7 @@ I will use the US National Park Services API - https://www.nps.gov/subjects/deve
 | GET                  | /users/new               | R    | a form for creating a new user                 |       |
 | POST                 | /users               | C    | create new user                                |       |
 | GET                  | /users/:profile               | R    | show user's profile                            |       |
+| GET                  | /users/:profile/edit               | R    | a form for editing the user's profile                            |       |
 | PUT                  | /users/:profile               | U    | edit the user's profile                        |       |
 | GET                  | /users/login               | R    | show a login form                         |       |
 | POST                  | /users/login               | C    | show a login form                         |       |

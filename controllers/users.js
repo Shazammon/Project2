@@ -120,22 +120,32 @@ router.get('/:profile', async (req, res) => {
                     userId: res.locals.user.id
                 }
             })
-            userFavs.forEach(fav => {
-                console.log(fav.dataValues.parkCode)
-            })
             // console.log(userFavs)
+            const parkFavs = []
             let parksUrl = 'https://developer.nps.gov/api/v1'
-            // I NEED HELP FROM INSTRUCTORS TO FIGURE OUT HOW TO ONLY RUN THE API FOR THE NATIONAL PARKS THAT ARE ON THE FAVORITES LIST
-            const response = await axios.get(`${parksUrl}/parks?limit=500&api_key=${process.env.API_KEY}`)
+            
+
+            
+            userFavs.forEach(async fav => {
+                // console.log(fav.dataValues.parkCode)
+                // console.log(`${parksUrl}/parks?parkCode=${fav.dataValues.parkCode}&limit=500&api_key=${process.env.API_KEY}`)
+                const response = await axios.get(`${parksUrl}/parks?parkCode=${fav.dataValues.parkCode}&limit=500&api_key=${process.env.API_KEY}`)
+                // console.log(response.data.data)
+                parkFavs.push(response.data.data)
+                // console.log(parkFavs)
+                
+            })
+            console.log(parkFavs)
+            
             // console.log(response)
-                const parks = response.data.data
+                // const parks = response.data.data
                 
                 // console.log(`Parks data:`, parks)
                 // console.log(`favorites data:`, userFavs)
-                res.render('users/profile', {
+                console.log(res.locals.user)
+                res.render('users/profile.ejs', {
                     user: res.locals.user,
-                    favorites: userFavs,
-                    parks: parks
+                    parks: parkFavs
                     
                 })
                 
@@ -146,5 +156,17 @@ router.get('/:profile', async (req, res) => {
         }
     }
 })
+
+router.get('/edit', (req, res) => {
+    // try {
+        res.render('users/edit.ejs', {
+            user: res.locals.user
+        })
+//     } catch(err) {
+//         console.log(err)
+//         res.send(`An error has occurred.`)
+//     }
+})
+
 
 module.exports = router
