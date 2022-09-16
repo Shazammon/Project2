@@ -4,6 +4,7 @@ const router = express.Router()
 const db = require('../models')
 const crypto = require('crypto-js')
 const bcrypt = require('bcrypt')
+const axios = require('axios')
 
 // async function getFavorites() {
 //     try {
@@ -119,14 +120,26 @@ router.get('/:profile', async (req, res) => {
                     userId: res.locals.user.id
                 }
             })
-            
-            console.log(res.locals.user)
-            console.log(userFavs)
-            res.render('users/profile', {
-                user: res.locals.user,
-                favorites: userFavs
-                
+            userFavs.forEach(fav => {
+                console.log(fav.dataValues.parkCode)
             })
+            // console.log(userFavs)
+            let parksUrl = 'https://developer.nps.gov/api/v1'
+            // I NEED HELP FROM INSTRUCTORS TO FIGURE OUT HOW TO ONLY RUN THE API FOR THE NATIONAL PARKS THAT ARE ON THE FAVORITES LIST
+            const response = await axios.get(`${parksUrl}/parks?limit=500&api_key=${process.env.API_KEY}`)
+            // console.log(response)
+                const parks = response.data.data
+                
+                // console.log(`Parks data:`, parks)
+                // console.log(`favorites data:`, userFavs)
+                res.render('users/profile', {
+                    user: res.locals.user,
+                    favorites: userFavs,
+                    parks: parks
+                    
+                })
+                
+
         } catch(err) {
             console.log(err)
             res.send('Yo, there is an error')

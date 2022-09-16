@@ -2,11 +2,12 @@
 
 <h3>My Favorite Parks:</h3>
 
-favorites.forEach(favorite => {
+<% favorites.dataValues.parkCode.forEach(code => { %>
     <div>
         <h2>
-            park.fullName
+            <% favorites.parkCode %>
+            <%= parks.fullName %>
         </h2>
     </div>
-})
+<% }) %>
 
