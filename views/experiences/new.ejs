@@ -1,0 +1,15 @@
+<h2>Record your experience at <%= fullName.fullName %></h2>
+
+<form action="/experiences/new" method="POST">
+    <label for="title">Experience Title:</label>
+    <input id="title" type="text" name="title" required>
+
+    <label for="description">Describe your experience at  park:</label>
+    <input id="description" type="text" name="description" required>
+
+    <input id="parkCode" name="parkCode" value="<%= parkCode.parkCode %>" hidden>
+    <input id="fullName" name="fullName" value="<%= fullName.fullName %>" hidden>
+
+    <button type="submit">Post Experience</button>
+
+</form>

@@ -30,12 +30,13 @@ router.get('/', (req, res) => {
 })
 
 // POST /favorite -- favorite a park and create new item in favorites table
-router.post('/favorite', async (req, res) => {
+router.post('/:parkCode/favorite', async (req, res) => {
     try {
         const newFavorite = {
             where: {
                 userId: res.locals.user.id,
-                parkCode: req.body.parkCode
+                parkCode: req.body.parkCode,
+                fullName: req.body.fullName
             }
         }
         const [favorite, created] = await db.favorite.findOrCreate(newFavorite)
@@ -46,5 +47,23 @@ router.post('/favorite', async (req, res) => {
         res.send('There is an error! Go back.')
     }
 })
+// GET /:parkCode -- show an index of all parks
+router.get('/:parkCode', (req, res) => {
+    let parksUrl = 'https://developer.nps.gov/api/v1'
+        // await res.send('This is your parks page')
+        console.log(req.params.parkCode)
+        axios.get(`${parksUrl}/parks?parkCode=${req.params.parkCode}}&api_key=${process.env.API_KEY}`)
+            .then(response => {
+                
+                const parks = response.data.data
+                console.log(parks)
+                
+                res.render('parks/show.ejs', 
+                {
+                    parks: parks,
+                })
+            })
+})
+
 
 module.exports = router

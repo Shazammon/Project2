@@ -5,6 +5,7 @@ const db = require('../models')
 const crypto = require('crypto-js')
 const bcrypt = require('bcrypt')
 const axios = require('axios')
+const { promiseImpl } = require('ejs')
 
 // async function getFavorites() {
 //     try {
@@ -46,7 +47,7 @@ router.post('/', async (req, res) => {
             const encryptedUserIdString = encryptedUserId.toString()
             res.cookie('userId',  encryptedUserIdString)
             // redirct to the homepage
-            res.redirect('users/profile.ejs')
+            res.redirect('/users/profile')
         }
 
     } catch(err) {
@@ -108,47 +109,43 @@ router.get('/logout', (req, res) => {
     res.redirect('/')
 })
 
-router.get('/:profile', async (req, res) => {
+router.get('/profile', async (req, res) => {
     // if the user is not logged in...we need to reidrect to the login form
     if (!res.locals.user) {
         res.redirect('/users/login?message=You must authenticate before you are authroized to view this resource')
         // otherwise show them their profile
     } else {
         try {
+            // Select all user's favorites
             const userFavs = await db.favorite.findAll({
                 where: {
                     userId: res.locals.user.id
                 }
             })
-            // console.log(userFavs)
-            const parkFavs = []
+            
+            // Select all user's experiences
+            const userExperiences = await db.experience.findAll({
+                where: {
+                    userId: res.locals.user.id
+                }
+            })
+            
+            console.log(userExperiences)
             let parksUrl = 'https://developer.nps.gov/api/v1'
-            
-
-            
-            userFavs.forEach(async fav => {
-                // console.log(fav.dataValues.parkCode)
-                // console.log(`${parksUrl}/parks?parkCode=${fav.dataValues.parkCode}&limit=500&api_key=${process.env.API_KEY}`)
-                const response = await axios.get(`${parksUrl}/parks?parkCode=${fav.dataValues.parkCode}&limit=500&api_key=${process.env.API_KEY}`)
-                // console.log(response.data.data)
-                parkFavs.push(response.data.data)
-                // console.log(parkFavs)
+            const parkFavs = userFavs.map(fav => {
+                return axios.get(`${parksUrl}/parks?parkCode=${fav.dataValues.parkCode}&limit=500&api_key=${process.env.API_KEY}`)
+            })
+            const parkResponses = await Promise.all(parkFavs)
+            const parkDatas = parkResponses.map(park => {
+                return park.data.data[0]
+            })
+            res.render('users/profile.ejs', {
+                user: res.locals.user,
+                parks: parkDatas,
+                experiences: userExperiences
                 
             })
-            console.log(parkFavs)
             
-            // console.log(response)
-                // const parks = response.data.data
-                
-                // console.log(`Parks data:`, parks)
-                // console.log(`favorites data:`, userFavs)
-                console.log(res.locals.user)
-                res.render('users/profile.ejs', {
-                    user: res.locals.user,
-                    parks: parkFavs
-                    
-                })
-                
 
         } catch(err) {
             console.log(err)
@@ -157,8 +154,10 @@ router.get('/:profile', async (req, res) => {
     }
 })
 
-router.get('/edit', (req, res) => {
+// GET /profile/edit
+router.get('/profile/edit', (req, res) => {
     // try {
+        console.log(req.params)
         res.render('users/edit.ejs', {
             user: res.locals.user
         })
@@ -168,5 +167,19 @@ router.get('/edit', (req, res) => {
 //     }
 })
 
+router.post('/profile/edit', async (req, res) => {
+    const numRowsChanged = await db.user.update({
+        name: req.body.name,
+        email: req.body.email,
+        bio: req.body.bio,
+    },
+        {where: {
+            id: res.locals.user.id
+        }
+    })
+    console.log(numRowsChanged)
+
+    res.redirect('/users/profile')
+})
 
 module.exports = router

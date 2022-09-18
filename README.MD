@@ -64,4 +64,11 @@ I will use the US National Park Services API - https://www.nps.gov/subjects/deve
 
 ## Stretch Goals
 - Add a like counter on each park
+- User can update their password
 - Add activities to do in each park
+
+
+## todo list:
+- add user name to the experiences index views page - need to do a join on the user table
+- unfavorite a national park - need to do a join on the favorite table 
+

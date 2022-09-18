@@ -49,6 +49,7 @@ app.get('/', (req, res) => {
 // controllers
 app.use('/users', require('./controllers/users'))
 app.use('/parks', require('./controllers/parks'))
+app.use('/experiences', require('./controllers/experiences'))
 
 // listen on a port
 app.listen(PORT, () => console.log(`listening on port ${PORT}`))

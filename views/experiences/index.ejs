@@ -1,0 +1,12 @@
+<h2>Experiences from all users:</h2>
+
+<% experiences.forEach((experience, idx) => { %>
+    <div>
+        <h4>
+            <%= experience.fullName %>: <%= experience.title %> written by <%= users[idx].name %>
+        </h4>
+        <p>
+            <%= experience.description %>
+        </p>
+    </div>
+<% }) %>

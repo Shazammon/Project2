@@ -1,0 +1,34 @@
+<h1><%= parks.fullName %></h1>
+
+<img src="<%= parks.images[0].url %>" width="400px" >
+
+<h4>
+    Park Description:
+</h4>
+<p>
+    <%= parks.description %>
+</p>
+
+<h4>
+    Park Activities:
+</h4>
+<ul>
+<% for (let i = 0; i< parks.activities.length; i++) { %>
+    <li>
+        <%= parks.activities[i].name %>
+    </li>
+<% } %>
+</ul>
+
+<h4>Weather Info:</h4>
+<%= parks.weatherInfo %>
+
+<h4>Other Images</h4>
+
+<% for (let i = 0; i< parks.images.length; i++) { %>
+        <img src="<%= parks.images[i].url %>" width="400px"> 
+<% } %>
+
+<a href="/parks/<%= parks.parkCode %>">Return to top</a>
+
+<a href="/parks">Return to All Parks</a>

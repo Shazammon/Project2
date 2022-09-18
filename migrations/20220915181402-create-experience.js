@@ -20,6 +20,9 @@ module.exports = {
       parkCode: {
         type: Sequelize.STRING
       },
+      fullName: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
