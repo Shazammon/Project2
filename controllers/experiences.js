@@ -9,29 +9,22 @@ router.get('/', async (req, res) => {
         const allExperiences = await db.experience.findAll()
         // let users = []
         const users = allExperiences.map(experience => {
-            return allExperiences.forEach(experience => {
-                db.user.findOne({
-                    where: {
-                        id: experience.userId
-                    }
-                })
-                .then((name) => {
-                    users.push(name)
-                    console.log(users)
-                })
+            return db.user.findOne({
+                where: {
+                    id: experience.userId
+                }
             })
         })
-        console.log(users)
-        // const userName = await db.user.findOne({
-        //     where: {
-        //         userId = allExerperiences.userId
-        //     }
-        // })
-        // console.log(userName)
+        // console.log(users)
+        const userResponses = await Promise.all(users)
+        // console.log(userResponses)
+        const userDatas = userResponses.map(user => {
+                return user.dataValues
+            })
+        console.log(userDatas)
         res.render('experiences/index.ejs', {
             experiences: allExperiences,
-
-            // id: userId
+            users: userDatas
         })
     } catch(err) {
         console.log(err)
