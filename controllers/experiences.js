@@ -66,31 +66,42 @@ router.post('/new', async (req, res) => {
 })
 
 //GET /edit -- generate a form to edit an existing experience
-router.get('/edit/:', (req,res) => {
+router.get('/edit/:experienceId', async (req,res) => {
     try {
-        res.render('experiences/edit.ejs', {
-
+        const experienceData = await db.experience.findOne({
+            where: {
+                id: req.params.experienceId
+            }
         })
+        res.render('experiences/edit.ejs', {
+            experience: experienceData
+        })
+        console.log(experienceData)
     } catch(err) {
         console.log(err)
         res.send('Houston, we have an error!')
     }
 })
 
-// PUT /edit/:parkCode -- edit an existing experience
-router.put('/edit/:parkCode', async (req, res) => {
-    try {
+// PUT /edit -- edit an existing experience
+router.post('/edit', async (req, res) => {
+    // try {
+        console.log(req.body.description)
+        console.log(req.body.id)
         const numRowsChanged = await db.experience.update({
-
+            title: req.body.title,
+            description: req.body.description
         }, {
             where: {
-
+                id: req.body.id
             }
         })
-    } catch(err) {
-        console.log(err)
-        res.send('Houston, we have an error!')
-    }
+        console.log(numRowsChanged)
+        res.redirect('/users/profile')
+    // } catch(err) {
+    //     console.log(err)
+    //     res.send('Houston, we have an error!')
+    // }
 })
 
 module.exports = router

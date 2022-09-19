@@ -15,6 +15,11 @@
         <p>
             <%= experience.description %>
         </p>
+        <div>
+            <form method="GET" action="/experiences/edit/<%= experience.id %>">
+                <input type="submit" value="Edit Experience">
+            </form>
+        </div>
     </div>
 <% }) %>
 

@@ -109,6 +109,7 @@ router.get('/logout', (req, res) => {
     res.redirect('/')
 })
 
+// GET - /profile - view user profile
 router.get('/profile', async (req, res) => {
     // if the user is not logged in...we need to reidrect to the login form
     if (!res.locals.user) {
@@ -154,7 +155,7 @@ router.get('/profile', async (req, res) => {
     }
 })
 
-// GET /profile/edit
+// GET /profile/edit - get the form to update profile
 router.get('/profile/edit', (req, res) => {
     // try {
         console.log(req.params)
