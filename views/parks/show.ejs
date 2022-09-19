@@ -2,7 +2,14 @@
 
 <img src="<%= parks.images[0].url %>" width="400px" >
 
-
+<form method="POST" action="/parks/<%= parks.parkCode %>/favorite">
+    <input id="favorite" name="parkCode" value="<%= parks.parkCode %>" hidden>
+    <input id="favorite" name="fullName" value="<%= parks.fullName %>" hidden>
+    <input type="submit" value="Favorite">
+</form>
+<form method="GET" action="/experiences/new/<%= parks.parkCode %>/<%= parks.fullName %>">
+    <input type="submit" value="Add Experience">
+</form>
 
 <h4>
     Park Description:

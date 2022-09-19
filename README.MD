@@ -69,10 +69,6 @@ I will use the US National Park Services API - https://www.nps.gov/subjects/deve
 
 
 ## todo list:
-- link for all experiences
-- what is my error on the parks show page?! - research how to return to previous version
-- experiences edit route
-- experiences delete route
-- add user name to the experiences index views page - need to do a join on the user table
+- add an unfavorite button and logic
 - unfavorite a national park - need to do a join on the favorite table 
 

@@ -3,7 +3,7 @@
 <% experiences.forEach((experience, idx) => { %>
     <div>
         <h4>
-            <%= experience.fullName %>: <%= experience.title %> written by <%= users[idx].name %>
+            <a href="/parks/<%= experience.parkCode %>"> <%= experience.fullName %> </a>: <%= experience.title %> written by <%= users[idx].name %>
         </h4>
         <p>
             <%= experience.description %>
