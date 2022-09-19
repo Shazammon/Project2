@@ -42,9 +42,15 @@ router.post('/:parkCode/favorite', async (req, res) => {
     }
 })
 // GET /:parkCode -- show a specific park
-router.get('/:parkCode', (req, res) => {
+router.get('/:parkCode', async (req, res) => {
     let parksUrl = 'https://developer.nps.gov/api/v1'
         // await res.send('This is your parks page')
+        const experiencesData = await db.experience.findAll({
+            where: {
+                parkCode: req.params.parkCode
+            }
+        })
+        
         // console.log(req.params.parkCode)
         axios.get(`${parksUrl}/parks?parkCode=${req.params.parkCode}}&api_key=${process.env.API_KEY}`)
             .then(response => {
@@ -52,9 +58,11 @@ router.get('/:parkCode', (req, res) => {
                 const parks = response.data.data[0]
                 
                 res.render('parks/show.ejs', {
-                    parks: parks
+                    parks: parks,
+                    experiences: experiencesData
                 })
-                console.log(parks[0])
+                // console.log(parks[0])
+                console.log(experiencesData)
             })
 })
 

@@ -1,0 +1,13 @@
+<form action="/experiences/edit/?method=PUT" method="POST">
+    <label for="name">Name:</label>
+    <input id="name" type="text" name="name" value="<%= user.name %>" required>
+
+    <label for="email">Email:</label>
+    <input id="email" type="email" name="email" value="<%= user.email %>" required>
+
+    <label for="bio">Bio:</label>
+    <input id="bio" type="text" name="bio" value="<%= user.bio %>" >
+
+    <button type="submit">Update</button>
+
+</form>

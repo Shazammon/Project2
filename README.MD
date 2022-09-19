@@ -69,6 +69,7 @@ I will use the US National Park Services API - https://www.nps.gov/subjects/deve
 
 
 ## todo list:
+- link for all experiences
 - what is my error on the parks show page?! - research how to return to previous version
 - experiences edit route
 - experiences delete route

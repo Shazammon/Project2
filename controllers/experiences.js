@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
         const userDatas = userResponses.map(user => {
                 return user.dataValues
             })
-        console.log(userDatas)
+        // console.log(userDatas)
         res.render('experiences/index.ejs', {
             experiences: allExperiences,
             users: userDatas
@@ -37,26 +37,59 @@ router.get('/new/:parkCode/:fullName', (req, res) => {
     const parkCode = req.params.parkCode
     const fullName = req.params.fullName
     console.log(fullName)
+    console.log(parkCode)
     res.render('experiences/new.ejs', {
-        parkCode: parkCode,
-        fullName: fullName
+        parkCode,
+        fullName
     })
 })
 
-// POST /new/:parkCode
+// POST /new/:parkCode -- post new experience
 router.post('/new', async (req, res) => {
     try {
+        const parkCodeData = req.body.parkCode
+        const parkName = req.body.fullName
+        console.log(req.body.fullName)
+        console.log(req.body.title)
         const newExperience = await db.experience.create({
             title: req.body.title,
             description: req.body.description,
             userId: res.locals.user.id,
-            parkCode: req.body.parkCode,
-            fullName: req.body.fullName
+            parkCode: parkCodeData,
+            fullName: parkName
         })
         res.redirect('/experiences')
     } catch(err) {
         console.log(err)
         res.send('there has an error')
+    }
+})
+
+//GET /edit -- generate a form to edit an existing experience
+router.get('/edit/:', (req,res) => {
+    try {
+        res.render('experiences/edit.ejs', {
+
+        })
+    } catch(err) {
+        console.log(err)
+        res.send('Houston, we have an error!')
+    }
+})
+
+// PUT /edit/:parkCode -- edit an existing experience
+router.put('/edit/:parkCode', async (req, res) => {
+    try {
+        const numRowsChanged = await db.experience.update({
+
+        }, {
+            where: {
+
+            }
+        })
+    } catch(err) {
+        console.log(err)
+        res.send('Houston, we have an error!')
     }
 })
 

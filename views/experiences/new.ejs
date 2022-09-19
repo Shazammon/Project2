@@ -1,4 +1,4 @@
-<h2>Record your experience at <%= fullName.fullName %></h2>
+<h2>Record your experience at <%= fullName %></h2>
 
 <form action="/experiences/new" method="POST">
     <label for="title">Experience Title:</label>
@@ -7,8 +7,9 @@
     <label for="description">Describe your experience at  park:</label>
     <input id="description" type="text" name="description" required>
 
-    <input id="parkCode" name="parkCode" value="<%= parkCode.parkCode %>" hidden>
-    <input id="fullName" name="fullName" value="<%= fullName.fullName %>" hidden>
+    <% console.log(parkCode) %>
+    <input id="parkCode" name="parkCode" value="<%= parkCode %>" hidden>
+    <input id="fullName" name="fullName" value="<%= fullName %>" hidden>
 
     <button type="submit">Post Experience</button>
 
