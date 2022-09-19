@@ -9,3 +9,11 @@
     <button type="submit">Update</button>
 
 </form>
+
+<form action="/experiences/edit/?_method=DELETE" method="POST">
+    <input id="experienceId" name="id" value="<%= experience.id %>" hidden>
+
+    <button type="submit">Delete Experience</button>
+
+</form>
+
