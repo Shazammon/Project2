@@ -33,6 +33,18 @@
             <%= park.fullName %>
         </h3>
         <img src="<%= park.images[0].url %>" width="300px">
+
+        <form method="GET" action="/parks/<%= park.parkCode %>">
+            <input type="submit" value="View">
+        </form>
+        <form method="POST" action="/parks/<%= park.parkCode %>/favorite">
+            <input id="favorite" name="parkCode" value="<%= park.parkCode %>" hidden>
+            <input id="favorite" name="fullName" value="<%= park.fullName %>" hidden>
+            <input type="submit" value="Favorite">
+        </form>
+        <form method="GET" action="/experiences/new/<%= park.parkCode %>/<%= park.fullName %>">
+            <input type="submit" value="Add Experience">
+        </form>
     </div>
 <% }) %>
 

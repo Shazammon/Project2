@@ -8,7 +8,11 @@
         <p>
             <%= experience.description %>
         </p>
-        <% console.log(user) %>
-  
+        <% console.log(user.dataValues.id) %>
+        <% if (experience.userId === user.dataValues.id) { %>
+                <form method="GET" action="/experiences/edit/<%= experience.id %>">
+                    <input type="submit" value="Edit or Delete Experience">
+                </form>
+        <% } %>
     </div>
 <% }) %>
