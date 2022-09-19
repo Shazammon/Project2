@@ -9,9 +9,9 @@
 <h2>My Experiences:</h2>
 <% experiences.forEach(experience => { %>
     <div>
-        <h4>
-            Title: <%= experience.title %>
-        </h4>
+        <h3>
+            <%= experience.fullName %>: <%= experience.title %>
+        </h3>
         <p>
             <%= experience.description %>
         </p>
