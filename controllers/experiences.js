@@ -84,7 +84,7 @@ router.get('/edit/:experienceId', async (req,res) => {
 })
 
 // PUT /edit -- edit an existing experience
-router.put('/edit', async (req, res) => {
+router.post('/edit', async (req, res) => {
     // try {
         console.log(req.body.description)
         console.log(req.body.id)
@@ -104,19 +104,19 @@ router.put('/edit', async (req, res) => {
     // }
 })
 
-// COMMENTED OUT FOR DEPLOYMENT JAM SESH
-// router.delete('/edit', async (req, res) => {
-//     try {
-//         const numRowsDeleted = await db.experience.destroy({
-//             where: {
-//                 id: req.body.id
-//             }
-//         })
-
-//     } catch(err) {
-//         console.log(err)
-//         res.send('Houston we have an error!!')
-//     }
-// })
+// GET /edit - delete an experience
+router.post('/delete', async (req, res) => {
+    try {
+        const numRowsDeleted = await db.experience.destroy({
+            where: {
+                id: req.body.id
+            }
+        })
+        res.redirect('/users/profile')
+    } catch(err) {
+        console.log(err)
+        res.send('Houston we have an error!!')
+    }
+})
 
 module.exports = router

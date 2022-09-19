@@ -1,4 +1,4 @@
-<form action="/experiences/edit/?method=PUT" method="POST">
+<form action="/experiences/edit/?_method=PUT" method="POST">
     <label for="title">Experience Title:</label>
     <input id="title" type="text" name="title" value="<%= experience.title %>" required>
 
@@ -10,7 +10,7 @@
 
 </form>
 
-<form action="/experiences/edit/?_method=DELETE" method="POST">
+<form action="/experiences/delete/?_method=DELETE" method="POST">
     <input id="experienceId" name="id" value="<%= experience.id %>" hidden>
 
     <button type="submit">Delete Experience</button>
