@@ -49,12 +49,12 @@ router.get('/:parkCode', (req, res) => {
         axios.get(`${parksUrl}/parks?parkCode=${req.params.parkCode}}&api_key=${process.env.API_KEY}`)
             .then(response => {
                 
-                const parks = response.data.data
+                const parks = response.data.data[0]
                 
                 res.render('parks/show.ejs', {
                     parks: parks
                 })
-                console.log(parks)
+                console.log(parks[0])
             })
 })
 

@@ -69,7 +69,7 @@ I will use the US National Park Services API - https://www.nps.gov/subjects/deve
 
 
 ## todo list:
-- what is my error on the profile page?!
+- what is my error on the parks show page?! - research how to return to previous version
 - experiences edit route
 - experiences delete route
 - add user name to the experiences index views page - need to do a join on the user table
