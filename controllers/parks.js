@@ -50,7 +50,19 @@ router.get('/:parkCode', async (req, res) => {
                 parkCode: req.params.parkCode
             }
         })
-        
+        const users = experiencesData.map(experience => {
+            return db.user.findOne({
+                where: {
+                    id: experience.userId
+                }
+            })
+        })
+        // console.log(users)
+        const userResponses = await Promise.all(users)
+        // console.log(userResponses)
+        const userDatas = userResponses.map(user => {
+                return user.dataValues
+            })
         // console.log(req.params.parkCode)
         axios.get(`${parksUrl}/parks?parkCode=${req.params.parkCode}}&api_key=${process.env.API_KEY}`)
             .then(response => {
@@ -59,7 +71,8 @@ router.get('/:parkCode', async (req, res) => {
                 
                 res.render('parks/show.ejs', {
                     parks: parks,
-                    experiences: experiencesData
+                    experiences: experiencesData,
+                    users: userDatas
                 })
                 // console.log(parks[0])
                 console.log(experiencesData)

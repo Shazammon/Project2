@@ -19,6 +19,31 @@
 </p>
 
 <h4>
+    User experiences at <%= parks.fullName %>:
+</h4>
+<% experiences.forEach((experience, idx) => { %>
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title"><%= experience.title %></h5>
+        <p class="card-text"><%= experience.description %></p>
+        <% if (experience.userId === user.dataValues.id) { %>
+            <form method="GET" action="/experiences/edit/<%= experience.id %>">
+                <input type="submit" value="Edit or Delete Experience">
+            </form>
+    <% } %>
+      </div>
+      <div class="card-footer text-muted">
+        Written by: <%= users[idx].name %>
+      </div>
+
+    </div>
+    <div class="mt-2 col-md-12">
+      <h5 class="text-white">  X  </h5>        
+  </div>
+    
+<% }) %>
+
+<h4>
     Park Activities:
 </h4>
 <ul>
@@ -32,7 +57,7 @@
 <h4>Weather Info:</h4>
 <%= parks.weatherInfo %>
 
-<h4>Other Images</h4>
+<h4>Other Images:</h4>
 
 <% for (let i = 0; i< parks.images.length; i++) { %>
         <img src="<%= parks.images[i].url %>" width="400px"> 
