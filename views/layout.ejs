@@ -9,36 +9,43 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>National Park Lovers</h1>
-    <nav>
-        <ul>
-            <!-- if the user is logged in-->
-            <!-- all data in the res.locals is useable in the layout -->
-            <% if (user) { %>
-                <li>
-                    <a href="/users/profile">My Profile</a>
-                </li>
-                <li>
-                    <a href="/parks">All National Parks</a>
-                </li>
-                <li>
-                    <a href="/experiences">All Experiences</a>
-                </li>
-                <li>
-                    <a href="/users/logout">Logout</a>
-                </li>
-            <% } else { %>
-                <li>
-                    <a href="/users/new">Sign up</a>
-                </li>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">National Park Lovers</span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- if the user is logged in-->
+                    <!-- all data in the res.locals is useable in the layout -->
+                    <% if (user) { %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/users/profile">My Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/parks">All National Parks</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/experiences">All Experiences</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/users/logout">Logout</a>
+                        </li class="nav-item">
+                    <% } else { %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/users/new">Sign up</a>
+                        </li class="nav-item">
 
-                <li>
-                    <a href="/users/login">Login</a>
-                </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/users/login">Login</a>
+                        </li>
 
-            <% } %>
+                    <% } %>
 
-        </ul>
+                </ul>
+            </div>
+        </div>
     </nav>
 
     <%- body %>

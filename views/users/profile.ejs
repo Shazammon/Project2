@@ -1,12 +1,18 @@
-<h2>Welcome to your profile, <%= user.name %>!</h2>
-<div>
+<div class="container-lg text-center">
+    <h2><%= user.name %>'s Profile Page</h2>
+</div>
+
+<div class="text-center">
     <a href="/users/profile/edit">Edit my profile</a>
 </div>
 
-<h2>Bio:</h2>
+<h2><%= user.name %>'s Bio</h2>
 <p2><%= user.bio %></p2>
 
-<h2>My Experiences:</h2>
+<h2><%= user.name %>'s Experiences:</h2>
+
+
+
 <% experiences.forEach(experience => { %>
     <div>
         <h3>
@@ -25,7 +31,7 @@
 
 
 
-<h2>My Favorite Parks:</h2>
+<h2><%= user.name %>'s Favorite Parks:</h2>
 
 <% parks.forEach(park => { %>
     <div>
