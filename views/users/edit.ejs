@@ -1,13 +1,14 @@
 <form action="/users/profile/edit/?_method=PUT" method="POST">
-    <label for="name">Name:</label>
-    <input id="name" type="text" name="name" value="<%= user.name %>" required>
+    <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input id="name" type="text" name="name" class="form-control" value="<%= user.name %>" required>
 
-    <label for="email">Email:</label>
-    <input id="email" type="email" name="email" value="<%= user.email %>" required>
+        <label for="email" class="form-label">Email:</label>
+        <input id="email" type="email" name="email" class="form-control" value="<%= user.email %>" required>
 
-    <label for="bio">Bio:</label>
-    <input id="bio" type="text" name="bio" value="<%= user.bio %>" >
+        <label for="bio" class="form-label">Bio:</label>
+        <input id="bio" type="text" name="bio" class="form-control" value="<%= user.bio %>" >
 
-    <button type="submit">Update</button>
-
+        <button type="submit" class="btn btn-success">Update</button>
+    </div>
 </form>

@@ -5,10 +5,10 @@
 <form method="POST" action="/parks/<%= parks.parkCode %>/favorite">
     <input id="favorite" name="parkCode" value="<%= parks.parkCode %>" hidden>
     <input id="favorite" name="fullName" value="<%= parks.fullName %>" hidden>
-    <input type="submit" value="Favorite">
+    <button type="submit" class="btn btn-success">Favorite</button>
 </form>
 <form method="GET" action="/experiences/new/<%= parks.parkCode %>/<%= parks.fullName %>">
-    <input type="submit" value="Add Experience">
+    <button class="btn btn-success" type="submit">Add Experience</button>
 </form>
 
 <h4>
