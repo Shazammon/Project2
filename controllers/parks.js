@@ -34,7 +34,7 @@ router.post('/:parkCode/favorite', async (req, res) => {
             }
         }
         const [favorite, created] = await db.favorite.findOrCreate(newFavorite)
-        res.redirect('/parks')
+        // res.redirect('/parks')
         
     } catch(err) {
         console.log(err)
