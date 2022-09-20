@@ -1,27 +1,23 @@
 <form action="/experiences/edit/?_method=PUT" method="POST">
     <div class="mb-3">
-        <label for="title" class="form-label">Example label</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" name="title" value="<%= experience.title %>" required>
       </div>
       <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Another label</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+        <label for="description" class="form-label">Describe your experience</label>
+        <input type="text" class="form-control" id="description" name="description" value="<%= experience.description %>" required>
       </div>
-    <label for="title">Experience Title:</label>
-    <input id="title" type="text" name="title" value="<%= experience.title %>" required>
 
-    <label for="description">Experience Description:</label>
-    <input id="description" type="text" name="description" value="<%= experience.description %>" required>
-    <input id="experienceId" name="id" value="<%= experience.id %>" hidden>
+        <input id="experienceId" name="id" value="<%= experience.id %>" hidden>
 
-    <button type="submit">Update</button>
+    <button type="submit" class="btn btn-success">Update</button>
 
 </form>
 
 <form action="/experiences/delete/?_method=DELETE" method="POST">
     <input id="experienceId" name="id" value="<%= experience.id %>" hidden>
 
-    <button type="submit">Delete Experience</button>
+    <button type="submit" class="btn btn-success">Delete Experience</button>
 
 </form>
 
