@@ -1,9 +1,12 @@
-<h1>All US National Parks</h1>
+<div class="container-lg text-center">
+    <h1>All US National Parks</h1>
+
+</div>
 
 <div>
     <% parks.forEach(park => { %>
             <% if(park.designation === 'National Park') { %>
-                <div>
+                <div class="container-md text-center">
                     <h2>
                         <%= park.fullName %>
                     </h2>
@@ -14,17 +17,19 @@
                     <p>
                         <%= park.description %>
                     </p>
-                    <form method="GET" action="/parks/<%= park.parkCode %>">
-                        <input type="submit" value="View">
-                    </form>
-                    <form method="POST" action="/parks/<%= park.parkCode %>/favorite">
-                        <input id="favorite" name="parkCode" value="<%= park.parkCode %>" hidden>
-                        <input id="favorite" name="fullName" value="<%= park.fullName %>" hidden>
-                        <input type="submit" value="Favorite">
-                    </form>
-                    <form method="GET" action="/experiences/new/<%= park.parkCode %>/<%= park.fullName %>">
-                        <input type="submit" value="Add Experience">
-                    </form>
+                    <div>
+                        <form method="GET" action="/parks/<%= park.parkCode %>">
+                            <input type="submit" value="View">
+                        </form>
+                        <form method="POST" action="/parks/<%= park.parkCode %>/favorite">
+                            <input id="favorite" name="parkCode" value="<%= park.parkCode %>" hidden>
+                            <input id="favorite" name="fullName" value="<%= park.fullName %>" hidden>
+                            <button type="submit">Favorite</button>
+                        </form>
+                        <form method="GET" action="/experiences/new/<%= park.parkCode %>/<%= park.fullName %>">
+                            <input type="submit" value="Add Experience">
+                        </form>
+                    </div>
                 </div>
             <% } %>
 <% }) %>
