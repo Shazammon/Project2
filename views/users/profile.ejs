@@ -6,51 +6,62 @@
     <a href="/users/profile/edit">Edit my profile</a>
 </div>
 
-<h2><%= user.name %>'s Bio</h2>
+<h2><%= user.name %>'s Bio:</h2>
 <p2><%= user.bio %></p2>
+
+<div class="mt-2 col-md-12">
+    <h4 class="text-white">  X  </h4>        
+</div>
 
 <h2><%= user.name %>'s Experiences:</h2>
 
-
-
+<div class="row row-cols-1 row-cols-md-3 g-4">
 <% experiences.forEach(experience => { %>
-    <div>
-        <h3>
-            <%= experience.fullName %>: <%= experience.title %>
-        </h3>
-        <p>
-            <%= experience.description %>
-        </p>
-        <div>
+    <div class="col">
+    <div class="card" style="width: 24rem;">
+        <div class="card-body">
+            <h4 class="card-title"><%= experience.title %></h4>
+            <h5 class="card-subtitle mb-2 text-muted"><%= experience.fullName %></h5>
+            <p class="card-text"><%= experience.description %></p>
             <form method="GET" action="/experiences/edit/<%= experience.id %>">
-                <input type="submit" value="Edit or Delete Experience">
+                <input type="submit" class="btn btn-success" value="Edit or Delete Experience">
             </form>
         </div>
+      </div>
     </div>
 <% }) %>
+</div>
 
-
+<div class="mt-2 col-md-12">
+    <h4 class="text-white">  X  </h4>        
+</div>
 
 <h2><%= user.name %>'s Favorite Parks:</h2>
 
+<div class="row row-cols-1 row-cols-md-3 g-4">
 <% parks.forEach(park => { %>
-    <div>
-        <h3>
-            <%= park.fullName %>
-        </h3>
-        <img src="<%= park.images[0].url %>" width="300px">
+    <div class="col">
+        <div class="card">
+          <img src="<%= park.images[0].url %>" class="card-img-top" alt="<%= park.fullName %>">
+          <div class="card-body">
+            <h5 class="card-title"><%= park.fullName %></h5>
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <form method="GET" action="/parks/<%= park.parkCode %>">
+                  <button type="submit" class="btn btn-success">View</button>
+              </form>
+              <form method="POST" action="/parks/<%= park.parkCode %>/favorite">
+                  <input id="favorite" name="parkCode" value="<%= park.parkCode %>" hidden>
+                  <input id="favorite" name="fullName" value="<%= park.fullName %>" hidden>
+                  <button type="submit" class="btn btn-success">Favorite</button>
+              </form>
+              <form method="GET" action="/experiences/new/<%= park.parkCode %>/<%= park.fullName %>">
+                  <button type="submit" class="btn btn-success">Add Experience</button>
+              </form>
+          </div>
+          </div>
+        </div>
+      </div>
 
-        <form method="GET" action="/parks/<%= park.parkCode %>">
-            <input type="submit" value="View">
-        </form>
-        <form method="POST" action="/parks/<%= park.parkCode %>/favorite">
-            <input id="favorite" name="parkCode" value="<%= park.parkCode %>" hidden>
-            <input id="favorite" name="fullName" value="<%= park.fullName %>" hidden>
-            <input type="submit" value="Favorite">
-        </form>
-        <form method="GET" action="/experiences/new/<%= park.parkCode %>/<%= park.fullName %>">
-            <input type="submit" value="Add Experience">
-        </form>
-    </div>
 <% }) %>
+</div>
 
