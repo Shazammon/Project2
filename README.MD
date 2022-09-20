@@ -35,16 +35,16 @@ I will use the US National Park Services API - https://www.nps.gov/subjects/deve
 | GET                  | /users/:profile/edit               | R    | a form for editing the user's profile                            |       |
 | PUT                  | /users/:profile               | U    | edit the user's profile                        |       |
 | GET                  | /users/login               | R    | show a login form                         |       |
-| POST                  | /users/login               | C    | show a login form                         |       |
-| GET                  | /users/logout               | R    | show a login form                         |       |
+| POST                  | /users/login               | C    | accept a payload of form data and use it to login the user                         |       |
+| GET                  | /users/logout               | R    | logout a user by clearing the stored cookie                    |       |
 
 ### National Parks
 | HTTP METHOD (_Verb_) | URL (_Nouns_)            | CRUD | Response                                          | Notes |
 | -------------------- | -------------            | ---- | --------                                          | ----- |
 | GET                  | /parks                   | R    | show all national parks                           |       |
 | GET                  | /parks/:parkCode               | R    | show a specific national park and all experiences |       |
-| POST                 | /parks/favorite/:parkCode/:id     | C    | add to favorites list                             |       |
-| DELETE               | /parks/favorite/:parkCode/:id     | D    | remove from favorites list                        |       |
+| POST                 | /parks/:parkCode/favorite    | C    | add to favorites list                             |       |
+| DELETE               | /parks/favorite/:parkCode     | D    | remove from favorites list                        |       |
 
 ### Experiences
 | HTTP METHOD (_Verb_) | URL (_Nouns_)            | CRUD | Response                                              | Notes |
