@@ -65,7 +65,7 @@ router.post('/new', async (req, res) => {
     }
 })
 
-//GET /edit -- generate a form to edit an existing experience
+//GET /edit/:experienceId -- generate a form to edit an existing experience
 router.get('/edit/:experienceId', async (req,res) => {
     try {
         const experienceData = await db.experience.findOne({
@@ -104,7 +104,7 @@ router.post('/edit', async (req, res) => {
     // }
 })
 
-// GET /edit - delete an experience
+// DELETE /delete - delete an experience
 router.post('/delete', async (req, res) => {
     try {
         const numRowsDeleted = await db.experience.destroy({

@@ -1,21 +1,21 @@
 # NATIONAL PARK EXPERIENCES
 
 ## App Description
-Users will be able to favorite national park, write entries on their experiences in a national park, and share tips for positive experiences. 
+Users will be able to view all US national parks, add parks to their favorites list, write entries on their experiences in a national park, and read other user's experiences. 
 
 ## API
 I will use the US National Park Services API - https://www.nps.gov/subjects/developer/api-documentation.htm#/amenities/parksplaces/getAmenitiesParksplaces.
 
 ## User stories
-- As a user, I want to search for national parks and related landmarks at that park
+- As a user, I want to view a list of US national parks
+- As a user, I want to see specific details about any given national park
 - As a user, I want to add national parks to my favorites list
-- As a user, I want to be able to view my profile, my favorited national parks, and written experiences
-- As a user, I want to add parks to my visited list.
 - As a user, I want to document my experiences at a national park. 
 - As a user, I want to read other users' experiences
+- As a user, I want to be able to view my profile, my favorited national parks, and my written experiences
 
 ## ERD
-![](ERD.png)
+![](ERD_tables.png)
 
 ## Wire Frames
 ### Home page - List of all National Parks
@@ -49,16 +49,18 @@ I will use the US National Park Services API - https://www.nps.gov/subjects/deve
 ### Experiences
 | HTTP METHOD (_Verb_) | URL (_Nouns_)            | CRUD | Response                                              | Notes |
 | -------------------- | -------------            | ---- | --------                                              | ----- |
-| GET                  | /experiences             | R    | show form to write an experience about national park  |       |
-| POST                 | /experiences/:id         | C    | a new experience is created                           |       |
-| GET                  | /experiences/:id         | R    | read a specific experience                            |       |
-| POST                 | /experiences/:id         | U    | update an experience                                  |       |
-| DELETE               | /experiences/:id         | D    | delete an experience                                  |       |
+| GET                  | /experiences             | R    | display all user experiences  |       |
+| GET                  | /experiences/new/:parkCode             | R    | show form to write an experience about a national park  |       |
+| POST                 | /experiences/new/:parkCode         | C    | a new experience is created                           |       |
+| GET                  | /experiences/edit/:experienceId         | R    | show a form to edit or delete an experience                            |       |
+| PUT                 | /experiences/edit         | U    | update an experience                                  |       |
+| DELETE               | /experiences/delete         | D    | delete an experience                                  |       |
 
 ## MVP
 - Set up sequelize ORM models and tables
-- Set up national park API
-- Set up express package with all RESTful routes
+- Connect API to US gov national park database
+- Set up express package to create servers and controllers
+- Set up routing using RESTful principles
 - Clean HTML, CSS, and back-end code
 - Deploy online
 
