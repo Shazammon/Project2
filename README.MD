@@ -3,6 +3,17 @@
 ## App Description
 Users will be able to view all US national parks, add parks to their favorites list, write entries on their experiences in a national park, and read other user's experiences. 
 
+## Link to app
+https://national-park-love-shazammon.koyeb.app/
+
+## Technologies used
+- Javascript, CSS (bootstrap) and HTML
+- Express package for servers
+- Sequelize package for ORM models and tables
+- Routing following RESTful principles
+- Axios package for linking to external API
+- 
+
 ## API
 I will use the US National Park Services API - https://www.nps.gov/subjects/developer/api-documentation.htm#/amenities/parksplaces/getAmenitiesParksplaces.
 

@@ -7,14 +7,6 @@ const bcrypt = require('bcrypt')
 const axios = require('axios')
 const { promiseImpl } = require('ejs')
 
-// async function getFavorites() {
-//     try {
-//         const
-
-//     } catch(err) {
-//         console.log(err)
-//     }
-// }
 
 // GET /users/new -- render a form to create a new users
 router.get('/new', (req, res) => {
@@ -162,10 +154,6 @@ router.get('/profile/edit', (req, res) => {
         res.render('users/edit.ejs', {
             user: res.locals.user
         })
-//     } catch(err) {
-//         console.log(err)
-//         res.send(`An error has occurred.`)
-//     }
 })
 
 router.post('/profile/edit', async (req, res) => {
