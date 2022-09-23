@@ -76,6 +76,7 @@ I will use the US National Park Services API - https://www.nps.gov/subjects/deve
 - Deploy online
 
 ## Stretch Goals
+- Create a page to view all experiences
 - Add a favorite counter for each park
 - User can update their password
 - Add activities to do in each park
@@ -90,4 +91,5 @@ I will use the US National Park Services API - https://www.nps.gov/subjects/deve
 - create a carosel for the homepage
 - add an unfavorite button and logic
 - unfavorite a national park - need to do a join on the favorite table 
+- search bar
 

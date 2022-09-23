@@ -1,4 +1,4 @@
-<form action="/experiences/edit/?_method=PUT" method="POST">
+<form method="POST" action="/experiences/edit/?_method=PUT" >
     <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input type="text" class="form-control" id="title" name="title" value="<%= experience.title %>" required>
@@ -14,7 +14,8 @@
 
 </form>
 
-<form action="/experiences/delete/?_method=DELETE" method="POST">
+<% console.log(experience.id) %>
+<form method="POST" action="/experiences/delete/<%=experience.id%>?_method=DELETE" >
     <input id="experienceId" name="id" value="<%= experience.id %>" hidden>
 
     <button type="submit" class="btn btn-success">Delete Experience</button>

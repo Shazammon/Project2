@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const db = require('../models')
+const methodOverride = require("method-override")
+router.use(methodOverride("_method"))
 
 
 // GET / - display all experiences
@@ -76,7 +78,7 @@ router.get('/edit/:experienceId', async (req,res) => {
         res.render('experiences/edit.ejs', {
             experience: experienceData
         })
-        console.log(experienceData)
+        // console.log(experienceData)
     } catch(err) {
         console.log(err)
         res.send('Houston, we have an error!')
@@ -84,7 +86,7 @@ router.get('/edit/:experienceId', async (req,res) => {
 })
 
 // PUT /edit -- edit an existing experience
-router.post('/edit', async (req, res) => {
+router.put('/edit', async (req, res) => {
     // try {
         console.log(req.body.description)
         console.log(req.body.id)
@@ -105,11 +107,12 @@ router.post('/edit', async (req, res) => {
 })
 
 // DELETE /delete - delete an experience
-router.post('/delete', async (req, res) => {
+router.delete('/delete/:experienceid', async (req, res) => {
     try {
+        console.log(req.body.id)
         const numRowsDeleted = await db.experience.destroy({
             where: {
-                id: req.body.id
+                id: req.params.experienceid
             }
         })
         res.redirect('/users/profile')
