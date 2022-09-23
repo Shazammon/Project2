@@ -7,15 +7,21 @@ Users will be able to view all US national parks, add parks to their favorites l
 https://national-park-love-shazammon.koyeb.app/
 
 ## Technologies used
+- Node.js - Express, Sequelize, EJS, Axios
+- PostgreSQL
 - Javascript, CSS (bootstrap) and HTML
-- Express package for servers
-- Sequelize package for ORM models and tables
-- Routing following RESTful principles
-- Axios package for linking to external API
-- 
+
+## Installation
+- Fork and Clone this repo to your local repository
+- Run `npm init -y` to initialize npm
+- Open the repo and navigate to package.json file to view the list of npm packages in use (listed under dependencies)
+- Run `npm install` in your terminal to download of all required npm packages. node_modules should appear in the folder.
+- Ensure that node_modules and .env are in the .gitignore file before committing to remote repository
+- Run `sequelize db:create` to create the database in psql
+- Run `sequelize db:migrate` to migrate the models
 
 ## API
-I will use the US National Park Services API - https://www.nps.gov/subjects/developer/api-documentation.htm#/amenities/parksplaces/getAmenitiesParksplaces.
+I will use the US National Park Services API - https://www.nps.gov/subjects/developer/api-documentation.htm#/amenities/parksplaces/getAmenitiesParksplaces
 
 ## User stories
 - As a user, I want to view a list of US national parks
