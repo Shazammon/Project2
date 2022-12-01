@@ -1,5 +1,5 @@
 <div class="container-lg text-center">
-    <h1>All US National Parks</h1>
+    <h1>US National Parks</h1>
 </div>
 
 <div>
@@ -14,15 +14,15 @@
                           <p class="card-text"><%= park.description %></p>
                           <div class="btn-group" role="group" aria-label="Basic example">
                             <form method="GET" action="/parks/<%= park.parkCode %>">
-                                <button type="submit" class="btn btn-success">View</button>
+                                <button type="submit" class="btn btn-success m-1">View</button>
                             </form>
                             <form method="POST" action="/parks/<%= park.parkCode %>/favorite">
                                 <input id="favorite" name="parkCode" value="<%= park.parkCode %>" hidden>
                                 <input id="favorite" name="fullName" value="<%= park.fullName %>" hidden>
-                                <button type="submit" class="btn btn-success">Favorite</button>
+                                <button type="submit" class="btn btn-success m-1">Favorite</button>
                             </form>
                             <form method="GET" action="/experiences/new/<%= park.parkCode %>/<%= park.fullName %>">
-                                <button type="submit" class="btn btn-success">Add Experience</button>
+                                <button type="submit" class="btn btn-success m-1">Add Experience</button>
                             </form>
                         </div>
                         </div>
