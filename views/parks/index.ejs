@@ -10,7 +10,7 @@
                       <div class="card">
                         <img src="<%= park.images[0].url %>" class="card-img-top" alt="<%= park.fullName %>">
                         <div class="card-body">
-                          <h5 class="card-title"><%= park.fullName %></h5>
+                          <h5 class="card-title"><%= park.fullName %> <%=park.description%></h5>
                           <p class="card-text"><%= park.description %></p>
                           <div class="btn-group" role="group" aria-label="Basic example">
                             <form method="GET" action="/parks/<%= park.parkCode %>">
